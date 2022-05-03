@@ -1,14 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import BottomNavigation from '../navigation/BottomNavigation'
 
-const Screen1 = () => {
+const Home = () => {
   return (
-    <View>
-      <Text>Screen1</Text>
-    </View>
+    <BottomNavigation />
   )
 }
 
-export default Screen1
+export default Home
 
 const styles = StyleSheet.create({})
