@@ -48,7 +48,6 @@ const Account = ({ navigation }: RootStackScreenProps<"Account">) => {
               onChangeText={setEmail}
               baseColor={Colors.primaryText}
               inputContainerStyle={{ borderColor: Colors.primaryBorder }}
-              underlineColorAndroid="red"
               tintColor={Colors.primaryText}
             />
             <TextField
@@ -58,7 +57,6 @@ const Account = ({ navigation }: RootStackScreenProps<"Account">) => {
               secureTextEntry
               baseColor={Colors.primaryText}
               inputContainerStyle={{ borderColor: Colors.primaryBorder }}
-              underlineColorAndroid="red"
               tintColor={Colors.primaryText}
             />
             <DropdownWrapper>

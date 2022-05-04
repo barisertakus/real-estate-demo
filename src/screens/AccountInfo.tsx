@@ -14,7 +14,10 @@ import rf from "../utils/responsiveFont";
 import Dropdown from "../components/core/Dropdown";
 import { languages } from "./Account";
 import Divider from "../components/core/Divider";
-import { ActionCreatorWithoutPayload, ActionCreatorWithPayload } from "@reduxjs/toolkit";
+import {
+  ActionCreatorWithoutPayload,
+  ActionCreatorWithPayload,
+} from "@reduxjs/toolkit";
 
 interface IAccountInfoProps extends RootStackScreenProps<"AccountInfo"> {
   account: Account;
@@ -51,7 +54,7 @@ export class AccountInfo extends Component<
       <SafeLayout>
         <Container>
           <Content>
-          <Header title={i18n.t("account")} />
+            <Header title={i18n.t("account")} />
 
             <Text title="Barış Ertakuş" h2 bold />
             <Details>
@@ -72,11 +75,13 @@ export class AccountInfo extends Component<
             />
           </Content>
           <Space />
-          <Button
-            title={i18n.t("logout")}
-            variant="outlined"
-            onPress={this.handleLogout}
-          />
+          <ButtonWrapper>
+            <Button
+              title={i18n.t("logout")}
+              variant="outlined"
+              onPress={this.handleLogout}
+            />
+          </ButtonWrapper>
         </Container>
       </SafeLayout>
     );
@@ -112,4 +117,8 @@ const DetailText = styled(Text)`
   font-size: ${rf(12.2)}px;
   font-weight: 500;
   margin-bottom: ${hp(1)}px;
+`;
+
+const ButtonWrapper = styled.View`
+  margin-bottom: ${hp(3)}px;
 `;
