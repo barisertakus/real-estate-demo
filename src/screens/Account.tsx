@@ -38,11 +38,15 @@ const Account = () => {
               label={i18n.t("email")}
               baseColor={Colors.primaryText}
               inputContainerStyle={{ borderColor: Colors.primaryBorder }}
+              underlineColorAndroid="red"
+              tintColor={Colors.primaryText}
             />
             <TextField
               label={i18n.t("password")}
               baseColor={Colors.primaryText}
               inputContainerStyle={{ borderColor: Colors.primaryBorder }}
+              underlineColorAndroid="red"
+              tintColor={Colors.primaryText}
             />
             <DropdownWrapper>
               <Dropdown
@@ -68,7 +72,7 @@ const Container = styled.View`
 `;
 
 const Header = styled.View`
-  padding-top: ${hp(4)}px;
+  padding-top: ${hp(6)}px;
 `;
 
 const Inputs = styled.View``;
