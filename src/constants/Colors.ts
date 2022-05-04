@@ -4,4 +4,6 @@ export default {
   background: "#FEFEFE",
   primaryText: "#64738C",
   primaryBorder: "#0DAFC0",
+  primaryBtn: "#E82223",
+  primaryActiveBtn: "#BBC3CF",
 };
