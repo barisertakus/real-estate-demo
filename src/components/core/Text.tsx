@@ -2,6 +2,7 @@ import { Text as DefaultText } from "react-native";
 import React from "react";
 import rf from "../../utils/responsiveFont";
 import { TextStyle } from "react-native";
+import Colors from "../../constants/Colors";
 
 interface ITextProps {
   h1?: boolean;
@@ -41,6 +42,7 @@ const Text = ({
         p && { fontSize: rf(12) },
         bold && { fontWeight: "bold" },
         italic && { fontStyle: "italic" },
+        { color: Colors.customBlack },
         style,
       ]}
       {...rest}

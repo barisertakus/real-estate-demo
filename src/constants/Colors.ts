@@ -8,4 +8,5 @@ export default {
   primaryBtn: "#E82223",
   primaryActiveBtn: "#BBC3CF",
   divider: "#E6E6E6",
+  customBlack: "#121212",
 };
