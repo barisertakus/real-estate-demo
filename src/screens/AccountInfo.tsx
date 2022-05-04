@@ -30,10 +30,6 @@ export class AccountInfo extends Component<
 > {
   constructor(props: IAccountInfoProps) {
     super(props);
-    // this.state = {
-    //   count: "",
-    // };
-
     this.handleLogout = this.handleLogout.bind(this);
     this.updateLanguage = this.updateLanguage.bind(this);
   }
@@ -45,6 +41,7 @@ export class AccountInfo extends Component<
 
   updateLanguage(languageName: string) {
     this.props.changeLanguage(languageName);
+    i18n.locale = languageName;
   }
 
   render() {
