@@ -4,6 +4,7 @@ import List from "../screens/List";
 import MaterialIcon from "@expo/vector-icons/MaterialCommunityIcons";
 import Colors from "../constants/Colors";
 import { wp } from "../utils/responsiveScreen";
+import rf from "../utils/responsiveFont";
 
 const Tab = createBottomTabNavigator();
 
@@ -12,9 +13,11 @@ function BottomNavigation() {
     <Tab.Navigator
       screenOptions={{
         tabBarActiveTintColor: Colors.bottomTab,
-        tabBarStyle: { paddingHorizontal: wp(15) },
+        tabBarStyle: { paddingHorizontal: wp(15)},
         headerShown: false,
+        tabBarLabelStyle: { fontSize: rf(11) },
       }}
+      initialRouteName="Account"
     >
       <Tab.Screen
         name="List"
