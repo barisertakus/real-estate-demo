@@ -13,6 +13,7 @@ function BottomNavigation() {
       screenOptions={{
         tabBarActiveTintColor: Colors.bottomTab,
         tabBarStyle: { paddingHorizontal: wp(15) },
+        headerShown: false,
       }}
     >
       <Tab.Screen
