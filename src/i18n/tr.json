@@ -1,11 +1,15 @@
 {
-  "hello" : "Merhaba",
-  "account" : "Hesap",
-  "email" : "E-posta",
-  "password" : "Şifre",
-  "locale" : "Dil",
-  "signup" : "Kayıt Ol",
-  "logout" : "Çıkış Yap",
-  "currentLocale" : "Geçerli dil",
-  "addBasket": "Sepete Ekle"
+  "hello": "Merhaba",
+  "account": "Hesap",
+  "email": "E-posta",
+  "password": "Şifre",
+  "locale": "Dil",
+  "signup": "Kayıt Ol",
+  "logout": "Çıkış Yap",
+  "currentLocale": "Geçerli dil",
+  "addBasket": "Sepete Ekle",
+  "totalOfProducts": "Ürünlerin Toplamı",
+  "total": "Toplam",
+  "taxesAndShipping": "Vergiler + Kargo",
+  "grandTotal": "Genel Toplam"
 }

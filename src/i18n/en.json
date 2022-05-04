@@ -1,11 +1,15 @@
 {
-  "hello" : "Hello",
-  "account" : "Account",
-  "email" : "E-mail",
-  "password" : "Password",
-  "locale" : "Locale",
-  "signup" : "Sign Up",
-  "logout" : "Log Out",
-  "currentLocale" : "Current locale",
-  "addBasket": "Add Basket"
+  "hello": "Hello",
+  "account": "Account",
+  "email": "E-mail",
+  "password": "Password",
+  "locale": "Locale",
+  "signup": "Sign Up",
+  "logout": "Log Out",
+  "currentLocale": "Current locale",
+  "addBasket": "Add Basket",
+  "totalOfProducts": "Total Of Products",
+  "total": "Total",
+  "taxesAndShipping": "Taxes + Shipping",
+  "grandTotal": "Grand Total"
 }

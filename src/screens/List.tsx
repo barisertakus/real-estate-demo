@@ -1,4 +1,3 @@
-import { ScrollView, Text } from "react-native";
 import React from "react";
 import SafeLayout from "../components/core/SafeLayout";
 import { useSelector } from "react-redux";
@@ -6,6 +5,7 @@ import { selectLanguage } from "../features/appSlice";
 import styled from "styled-components/native";
 import { hp, wp } from "../utils/responsiveScreen";
 import ListCard from "../components/card/ListCard";
+import BasketDetails from "../components/basket/BasketDetails";
 
 const List = () => {
   useSelector(selectLanguage);
@@ -20,6 +20,9 @@ const List = () => {
               <ListCard key={i} />
             ))}
         </StyledScroll>
+        <BasketWrapper>
+          <BasketDetails />
+        </BasketWrapper>
       </Container>
     </SafeLayout>
   );
@@ -33,6 +36,11 @@ const Container = styled.View`
 `;
 
 const StyledScroll = styled.ScrollView`
+  flex: 0.7;
   margin-bottom: ${hp(2)}px;
   margin-top: ${hp(2)}px;
+`;
+
+const BasketWrapper = styled.View`
+  flex: 0.3;
 `;
