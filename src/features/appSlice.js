@@ -19,7 +19,7 @@ const appSlice = createSlice({
       const { email, password } = action.payload;
       state.account = { email, password };
     },
-    logout: (state, action) => {
+    logout: (state) => {
       state.account.email = "";
       state.account.password = "";
     },

@@ -14,12 +14,13 @@ import rf from "../utils/responsiveFont";
 import Dropdown from "../components/core/Dropdown";
 import { languages } from "./Account";
 import Divider from "../components/core/Divider";
+import { ActionCreatorWithoutPayload, ActionCreatorWithPayload } from "@reduxjs/toolkit";
 
 interface IAccountInfoProps extends RootStackScreenProps<"AccountInfo"> {
   account: Account;
   language: string;
-  logout: any;
-  changeLanguage: any;
+  logout: ActionCreatorWithoutPayload;
+  changeLanguage: ActionCreatorWithPayload<any, string>;
 }
 
 type AccountInfoState = {};

@@ -1,12 +1,10 @@
-import React, { FunctionComponent, useState } from "react";
-import { StyleSheet } from "react-native";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TextField } from "rn-material-ui-textfield";
 import styled from "styled-components/native";
 import Button from "../components/core/Button";
 import Dropdown from "../components/core/Dropdown";
 import SafeLayout from "../components/core/SafeLayout";
-import Text from "../components/core/Text";
 import Header from "../components/Header";
 import Colors from "../constants/Colors";
 import { changeLanguage, login, selectLanguage } from "../features/appSlice";
