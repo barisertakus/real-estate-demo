@@ -1,14 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Text } from "react-native";
+import React from "react";
+import SafeLayout from "../components/core/SafeLayout";
+import i18n from "../i18n";
+import { useSelector } from "react-redux";
+import { selectLanguage } from "../features/appSlice";
 
 const List = () => {
+  useSelector(selectLanguage);
+
   return (
-    <View>
-      <Text>List</Text>
-    </View>
-  )
-}
+    <SafeLayout>
+      <Text>{i18n.t("hello")}</Text>
+    </SafeLayout>
+  );
+};
 
-export default List
-
-const styles = StyleSheet.create({})
+export default List;

@@ -1,22 +1,30 @@
-import { StyleSheet } from "react-native";
-import React, { useState } from "react";
+import { StyleSheet, View } from "react-native";
+import React, { useEffect, useState } from "react";
 import { Dropdown as RnDropdown } from "react-native-element-dropdown";
 import Text from "./Text";
 import Colors from "../../constants/Colors";
 import rf from "../../utils/responsiveFont";
 import { IProps } from "react-native-element-dropdown/src/components/Dropdown/model";
 
+type SelectType = {
+  label: string;
+  value: string;
+};
+
 interface IDropdownProps {
-  data: {
-    label: string;
-    value: string;
-  }[];
+  data: SelectType[];
   label?: string;
+  initialValue?: string;
   handleChange?: (text: string) => void;
 }
 
-const Dropdown = ({ data, label, handleChange }: IDropdownProps) => {
-  const [value, setValue] = useState(null);
+const Dropdown = ({
+  data,
+  label,
+  initialValue,
+  handleChange,
+}: IDropdownProps) => {
+  const [value, setValue] = useState<string>("");
   const [isFocus, setIsFocus] = useState(false);
 
   const onChange = (item: React.RefAttributes<any> & IProps) => {
@@ -27,8 +35,14 @@ const Dropdown = ({ data, label, handleChange }: IDropdownProps) => {
     }
   };
 
+  useEffect(() => {
+    if (initialValue) {
+      setValue(initialValue);
+    }
+  }, [initialValue]);
+
   return (
-    <>
+    <View>
       <Text title={label} p style={{ color: Colors.primaryText }} />
       <RnDropdown
         style={[styles.dropdown, isFocus && { borderColor: "blue" }]}
@@ -47,7 +61,7 @@ const Dropdown = ({ data, label, handleChange }: IDropdownProps) => {
         onBlur={() => setIsFocus(false)}
         onChange={onChange}
       />
-    </>
+    </View>
   );
 };
 

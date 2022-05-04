@@ -4,5 +4,7 @@
   "email" : "E-mail",
   "password" : "Password",
   "locale" : "Locale",
-  "signup" : "Sign Up"
+  "signup" : "Sign Up",
+  "logout" : "Log Out",
+  "currentLocale" : "Current locale"
 }

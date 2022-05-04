@@ -4,5 +4,7 @@
   "email" : "E-posta",
   "password" : "Şifre",
   "locale" : "Dil",
-  "signup" : "Kayıt Ol"
+  "signup" : "Kayıt Ol",
+  "logout" : "Çıkış Yap",
+  "currentLocale" : "Geçerli dil"
 }

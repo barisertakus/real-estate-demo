@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import { StyleSheet } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { TextField } from "rn-material-ui-textfield";
@@ -7,17 +7,19 @@ import Button from "../components/core/Button";
 import Dropdown from "../components/core/Dropdown";
 import SafeLayout from "../components/core/SafeLayout";
 import Text from "../components/core/Text";
+import Header from "../components/Header";
 import Colors from "../constants/Colors";
-import { changeLanguage, selectLanguage } from "../features/appSlice";
+import { changeLanguage, login, selectLanguage } from "../features/appSlice";
 import i18n from "../i18n";
+import { RootStackScreenProps } from "../types";
 import { hp, wp } from "../utils/responsiveScreen";
 
-const languages = [
+export const languages = [
   { label: "English", value: "en" },
   { label: "Türkçe", value: "tr" },
 ];
 
-const Account = () => {
+const Account = ({ navigation }: RootStackScreenProps<"Account">) => {
   const dispatch = useDispatch();
   const language = useSelector(selectLanguage);
 
@@ -26,13 +28,16 @@ const Account = () => {
     dispatch(changeLanguage(languageName));
   };
 
+  const handleLogin = () => {
+    dispatch(login({email: "test", password: "test"}))
+    navigation.navigate("AccountInfo")
+  };
+
   return (
     <SafeLayout>
       <Container>
         <Content>
-          <Header>
-            <Text title={i18n.t("account")} h2 />
-          </Header>
+          <Header title={i18n.t("account")} />
           <Inputs>
             <TextField
               label={i18n.t("email")}
@@ -53,10 +58,15 @@ const Account = () => {
                 label={i18n.t("locale")}
                 data={languages}
                 handleChange={updateLanguage}
+                initialValue={language}
               />
             </DropdownWrapper>
           </Inputs>
-          <Button title={i18n.t("signup")} />
+          <Button
+            title={i18n.t("signup")}
+            variant="contained"
+            onPress={handleLogin}
+          />
         </Content>
         <Bottom />
       </Container>
@@ -69,10 +79,6 @@ export default Account;
 const Container = styled.View`
   flex: 1;
   padding: 0 ${wp(5)}px;
-`;
-
-const Header = styled.View`
-  padding-top: ${hp(6)}px;
 `;
 
 const Inputs = styled.View``;
