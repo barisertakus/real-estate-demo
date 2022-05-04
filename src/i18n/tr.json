@@ -1,8 +1,8 @@
 {
   "hello" : "Merhaba",
   "account" : "Hesap",
-  "email" : "E-mail",
-  "password" : "Password",
+  "email" : "E-posta",
+  "password" : "Şifre",
   "locale" : "Dil",
   "signup" : "Kayıt Ol"
 }
