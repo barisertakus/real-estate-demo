@@ -6,5 +6,6 @@
   "locale" : "Dil",
   "signup" : "Kayıt Ol",
   "logout" : "Çıkış Yap",
-  "currentLocale" : "Geçerli dil"
+  "currentLocale" : "Geçerli dil",
+  "addBasket": "Sepete Ekle"
 }

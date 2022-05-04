@@ -6,5 +6,6 @@
   "locale" : "Locale",
   "signup" : "Sign Up",
   "logout" : "Log Out",
-  "currentLocale" : "Current locale"
+  "currentLocale" : "Current locale",
+  "addBasket": "Add Basket"
 }
