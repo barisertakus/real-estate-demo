@@ -23,14 +23,19 @@ const Account = ({ navigation }: RootStackScreenProps<"Account">) => {
   const dispatch = useDispatch();
   const language = useSelector(selectLanguage);
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const updateLanguage = (languageName: string) => {
     i18n.locale = languageName;
     dispatch(changeLanguage(languageName));
   };
 
   const handleLogin = () => {
-    dispatch(login({email: "test", password: "test"}))
-    navigation.navigate("AccountInfo")
+    dispatch(login({ email, password }));
+    navigation.navigate("AccountInfo");
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -41,6 +46,8 @@ const Account = ({ navigation }: RootStackScreenProps<"Account">) => {
           <Inputs>
             <TextField
               label={i18n.t("email")}
+              value={email}
+              onChangeText={setEmail}
               baseColor={Colors.primaryText}
               inputContainerStyle={{ borderColor: Colors.primaryBorder }}
               underlineColorAndroid="red"
@@ -48,6 +55,9 @@ const Account = ({ navigation }: RootStackScreenProps<"Account">) => {
             />
             <TextField
               label={i18n.t("password")}
+              value={password}
+              onChangeText={setPassword}
+              secureTextEntry
               baseColor={Colors.primaryText}
               inputContainerStyle={{ borderColor: Colors.primaryBorder }}
               underlineColorAndroid="red"

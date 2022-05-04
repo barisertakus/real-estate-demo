@@ -20,7 +20,8 @@ const appSlice = createSlice({
       state.account = { email, password };
     },
     logout: (state, action) => {
-      console.log("Logging out");
+      state.account.email = "";
+      state.account.password = "";
     },
   },
 });
