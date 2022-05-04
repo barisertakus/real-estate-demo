@@ -1,3 +1,8 @@
 {
-  "hello" : "Hello"
+  "hello" : "Hello",
+  "account" : "Account",
+  "email" : "E-mail",
+  "password" : "Password",
+  "locale" : "Locale",
+  "signup" : "Sign Up"
 }
