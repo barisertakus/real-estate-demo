@@ -1,11 +1,10 @@
-import { View } from "react-native";
+import Ionicon from "@expo/vector-icons/Ionicons";
 import React from "react";
-import villa from "../../../assets/villa.png";
+import { View } from "react-native";
 import styled from "styled-components/native";
+import Colors from "../../constants/Colors";
 import { hp, wp } from "../../utils/responsiveScreen";
 import Text from "../core/Text";
-import Ionicon from "@expo/vector-icons/Ionicons";
-import Colors from "../../constants/Colors";
 
 interface ICardProps {
   name: string;

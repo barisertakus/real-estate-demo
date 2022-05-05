@@ -1,12 +1,12 @@
-import { View } from "react-native";
 import React from "react";
+import { View } from "react-native";
+import { useDispatch } from "react-redux";
+import styled from "styled-components/native";
+import { addBasket } from "../../features/basketSlice";
+import { House } from "../../types";
+import Divider from "../core/Divider";
 import Card from "./Card";
 import CardButton from "./CardButton";
-import Divider from "../core/Divider";
-import styled from "styled-components/native";
-import { House } from "../../types";
-import { addBasket } from "../../features/basketSlice";
-import { useDispatch } from "react-redux";
 
 interface IListCardProps{
   house: House;

@@ -1,11 +1,11 @@
+import Ionicon from "@expo/vector-icons/Ionicons";
 import React from "react";
 import styled from "styled-components/native";
 import Colors from "../../constants/Colors";
-import rf from "../../utils/responsiveFont";
-import Text from "../core/Text";
-import Ionicon from "@expo/vector-icons/Ionicons";
-import { wp } from "../../utils/responsiveScreen";
 import i18n from "../../i18n";
+import rf from "../../utils/responsiveFont";
+import { wp } from "../../utils/responsiveScreen";
+import Text from "../core/Text";
 
 interface IButtonProps {
   title?: string;
