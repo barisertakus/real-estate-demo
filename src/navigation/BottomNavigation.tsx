@@ -5,10 +5,15 @@ import Colors from "../constants/Colors";
 import { wp } from "../utils/responsiveScreen";
 import rf from "../utils/responsiveFont";
 import AccountStack from "./AccountStack";
+import { useSelector } from "react-redux";
+import { selectLanguage } from "../features/appSlice";
+import i18n from "../i18n";
 
 const Tab = createBottomTabNavigator();
 
 function BottomNavigation() {
+  const language = useSelector(selectLanguage);
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -30,6 +35,7 @@ function BottomNavigation() {
               color={Colors.bottomTab}
             />
           ),
+          title: i18n.t("list"),
         }}
       />
       <Tab.Screen
@@ -39,7 +45,7 @@ function BottomNavigation() {
           tabBarIcon: (props) => (
             <MaterialIcon name="account" size={24} color={Colors.bottomTab} />
           ),
-          title: "Account"
+          title: i18n.t("account"),
         }}
       />
     </Tab.Navigator>
