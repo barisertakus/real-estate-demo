@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components/native";
 import { addBasket } from "../../features/basketSlice";
 import { House } from "../../types";
+import { hp } from "../../utils/responsiveScreen";
 import Divider from "../core/Divider";
 import Card from "./Card";
 import CardButton from "./CardButton";
@@ -38,5 +39,5 @@ const ListCard = ({ house }: IListCardProps) => {
 export default ListCard;
 
 const StyledDivider = styled(Divider)`
-  margin: 20px 0;
+  margin: ${hp(2)}px 0;
 `;

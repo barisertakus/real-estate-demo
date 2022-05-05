@@ -50,6 +50,7 @@ const Details = styled.View`
 const StyledImage = styled.Image`
   width: ${hp(9)}px;
   height: ${hp(9)}px;
+  border-radius: ${hp(1)}px;
 `;
 
 const TextIcon = styled.View`

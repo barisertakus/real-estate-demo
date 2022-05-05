@@ -15,7 +15,7 @@ interface IButtonProps {
 const CardButton = ({ title, onPress }: IButtonProps) => {
   return (
     <Container onPress={onPress}>
-      <StyledIcon name="ios-location-outline" size={24} color={Colors.primaryBtn} />
+      <StyledIcon name="ios-location-outline" size={20} color={Colors.primaryBtn} />
       <StyledText title={i18n.t("addBasket")} />
     </Container>
   );
@@ -31,7 +31,7 @@ const Container = styled.TouchableOpacity`
 `;
 
 const StyledIcon = styled(Ionicon)`
-  margin-right: ${wp(2)}px;
+  margin-right: ${wp(1)}px;
 `;
 
 const StyledText = styled(Text)`
