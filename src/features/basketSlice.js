@@ -16,7 +16,7 @@ const basketSlice = createSlice({
       state.items.push(action.payload);
       state.totalPrice = Number((state.totalPrice + price).toFixed(2));
       state.shipping = Number((state.shipping + shipping).toFixed(2));
-      state.grandTotal = Number((state.grandTotal + price).toFixed(2));
+      state.grandTotal = Number((state.grandTotal + price + shipping).toFixed(2));
     },
     clearBasket: (state) => {
       state.items = [];
