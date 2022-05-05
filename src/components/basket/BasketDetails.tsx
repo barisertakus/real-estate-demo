@@ -1,8 +1,8 @@
 import React from "react";
-import { View } from "react-native";
-import { useSelector } from "react-redux";
+import { TouchableOpacity, View } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components/native";
-import { selectBasket } from "../../features/basketSlice";
+import { clearBasket, selectBasket } from "../../features/basketSlice";
 import i18n from "../../i18n";
 import rf from "../../utils/responsiveFont";
 import { hp } from "../../utils/responsiveScreen";
@@ -10,7 +10,10 @@ import Text from "../core/Text";
 
 const BasketDetails = () => {
   const { totalPrice, shipping, grandTotal } = useSelector(selectBasket);
-
+  const dispatch = useDispatch();
+  const resetBasket = () => {
+    dispatch(clearBasket());
+  }
   return (
     <Container>
       <Text title={`${i18n.t("totalOfProducts")}:`} h3 bold />
@@ -18,7 +21,9 @@ const BasketDetails = () => {
         <RegularText title={`${i18n.t("total")}: ${totalPrice} TL`} />
         <RegularText title={`${i18n.t("taxesAndShipping")}: ${shipping} TL`} />
       </View>
-      <Text title={`${i18n.t("grandTotal")}: ${grandTotal} TL`} h4 bold />
+      <TouchableOpacity onPress={resetBasket}>
+        <Text title={`${i18n.t("grandTotal")}: ${grandTotal} TL`} h4 bold />
+      </TouchableOpacity>
     </Container>
   );
 };
