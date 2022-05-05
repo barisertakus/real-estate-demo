@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SafeLayout from "../components/core/SafeLayout";
 import { useSelector } from "react-redux";
 import { selectLanguage } from "../features/appSlice";
@@ -6,19 +6,31 @@ import styled from "styled-components/native";
 import { hp, wp } from "../utils/responsiveScreen";
 import ListCard from "../components/card/ListCard";
 import BasketDetails from "../components/basket/BasketDetails";
+import houseService from "../service/houseService";
+import { House } from "../types";
 
 const List = () => {
   useSelector(selectLanguage);
+  const [houses, setHouses] = useState<House[]>([]);
+
+  useEffect(() => {
+    houseService
+      .getAll()
+      .then((response) => {
+        setHouses(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <SafeLayout>
       <Container>
         <StyledScroll>
-          {Array(20)
-            .fill(0)
-            .map((item, i) => (
-              <ListCard key={i} />
-            ))}
+          {houses.map((house) => (
+            <ListCard key={house.id} house={house} />
+          ))}
         </StyledScroll>
         <BasketWrapper>
           <BasketDetails />

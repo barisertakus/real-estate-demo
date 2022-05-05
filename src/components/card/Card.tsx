@@ -7,20 +7,28 @@ import Text from "../core/Text";
 import Ionicon from "@expo/vector-icons/Ionicons";
 import Colors from "../../constants/Colors";
 
-const Card = () => {
+interface ICardProps {
+  name: string;
+  description: string;
+  imageUrl: string;
+  rates: number;
+  distance: number;
+}
+
+const Card = ({ name, description, imageUrl, rates, distance }: ICardProps) => {
   return (
     <Container>
       <View>
-        <StyledImage source={villa} />
+        <StyledImage source={{ uri: imageUrl }} />
       </View>
       <Details>
-        <Text title="Villa Bosphorus" h5 />
-        <PrimaryText title="Lorem İpsum Sit Dolor Met" />
+        <Text title={name} h5 />
+        <PrimaryText title={description} />
         <Icons>
-          <Text title="⭐ 3.9" style={{ marginTop: 2 }} />
+          <Text title={`⭐ ${rates}`} style={{ marginTop: 2 }} />
           <TextIcon>
             <Ionicon size={20} name="location" color={Colors.primaryBorder} />
-            <Text title="3.7km" />
+            <Text title={`${distance}km`} />
           </TextIcon>
         </Icons>
       </Details>

@@ -45,3 +45,13 @@ export type AppType = {
   };
 };
 
+export interface House {
+  id: number;
+  name: string;
+  description: string;
+  imageUrl: string;
+  rates: number;
+  distance: number;
+  price: number;
+  shipping: number;
+}

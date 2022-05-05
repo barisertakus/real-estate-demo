@@ -1,20 +1,24 @@
 import React from "react";
 import { View } from "react-native";
+import { useSelector } from "react-redux";
 import styled from "styled-components/native";
+import { selectBasket } from "../../features/basketSlice";
 import i18n from "../../i18n";
 import rf from "../../utils/responsiveFont";
 import { hp } from "../../utils/responsiveScreen";
 import Text from "../core/Text";
 
 const BasketDetails = () => {
+  const { totalPrice, shipping, grandTotal } = useSelector(selectBasket);
+
   return (
     <Container>
-      <Text title={i18n.t("totalOfProducts") + ": "} h3 bold />
+      <Text title={`${i18n.t("totalOfProducts")}:`} h3 bold />
       <View>
-        <RegularText title={i18n.t("total") + ": "} />
-        <RegularText title={i18n.t("taxesAndShipping") + ": "} />
+        <RegularText title={`${i18n.t("total")}: ${totalPrice} TL`} />
+        <RegularText title={`${i18n.t("taxesAndShipping")}: ${shipping} TL`} />
       </View>
-      <Text title={i18n.t("grandTotal") + ": "} h4 bold />
+      <Text title={`${i18n.t("grandTotal")}: ${grandTotal} TL`} h4 bold />
     </Container>
   );
 };
